@@ -29,9 +29,8 @@ const LayoutComponent = ({ children, isShow }: Props) => {
 	}
 
 	return (
-		<div>
-			<Layout style={{ height: '100%' }}>
-				{/* <HeaderComponent
+		<Layout style={{ height: '100vh' }}>
+			{/* <HeaderComponent
 				isShow
 				style={{
 					marginLeft: isSidebarCollapsed ? 50 : 200,
@@ -40,7 +39,7 @@ const LayoutComponent = ({ children, isShow }: Props) => {
 					zIndex: 1,
 				}}
 			/> */}
-				{/* <Header className="header">
+			{/* <Header className="header">
 				<div className="logo" />
 				<Menu
 					theme="dark"
@@ -49,12 +48,12 @@ const LayoutComponent = ({ children, isShow }: Props) => {
 					items={items1}
 				/>
 			</Header> */}
-				<SidebarComponent
-					isSidebarCollapsed={isSidebarCollapsed}
-					onCollapse={onCollapse}
-				/>
-				{/* <Layout className="site-layout"> */}
-				{/* <Header
+			<SidebarComponent
+				isSidebarCollapsed={isSidebarCollapsed}
+				onCollapse={onCollapse}
+			/>
+			{/* <Layout className="site-layout"> */}
+			{/* <Header
 					className="site-layout-background"
 					style={{ padding: '0 1.5rem', background: '#fff' }}
 				>
@@ -66,18 +65,18 @@ const LayoutComponent = ({ children, isShow }: Props) => {
 						},
 					)}
 				</Header> */}
-				<Content
-					className="site-layout-background"
-					style={{
-						margin: '0.5rem 1rem',
-						padding: '0.5rem 1rem ',
-						minHeight: 280,
-					}}
-				>
-					{children}
-				</Content>
-				{/* </Layout> */}
-				{/* <Layout hasSider>
+			<Content
+				className="site-layout-background"
+				style={{
+					margin: '0.5rem 1rem',
+					padding: '0.5rem 1rem ',
+					minHeight: 280,
+				}}
+			>
+				{children}
+			</Content>
+			{/* </Layout> */}
+			{/* <Layout hasSider>
 				<SidebarComponent
 					isSidebarCollapsed={isSidebarCollapsed}
 					onCollapse={onCollapse}
@@ -95,8 +94,7 @@ const LayoutComponent = ({ children, isShow }: Props) => {
 					</Content>
 				</Layout>
 			</Layout> */}
-			</Layout>
-		</div>
+		</Layout>
 	);
 };
 
