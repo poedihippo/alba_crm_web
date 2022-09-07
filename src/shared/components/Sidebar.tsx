@@ -45,19 +45,19 @@ const items = [
 		children: [
 			{
 				label: 'Need My Approval',
-				key: '/dashboard/table',
+				key: '/dashboard/1',
 			},
 			{
 				label: 'Approved',
-				key: '/dashboard/table',
+				key: '/dashboard/2',
 			},
 			{
 				label: 'Rejection',
-				key: '/dashboard/table',
+				key: '/dashboard/3',
 			},
 			{
 				label: 'All',
-				key: '/dashboard/table',
+				key: '/dashboard/4',
 			},
 		],
 	},
@@ -68,11 +68,11 @@ const items = [
 		children: [
 			{
 				label: 'Leads',
-				key: '/dashboard/table',
+				key: '/dashboard/5',
 			},
 			{
 				label: 'Brands',
-				key: '/dashboard/table',
+				key: '/dashboard/6',
 			},
 		],
 	},
@@ -93,19 +93,19 @@ const items = [
 		children: [
 			{
 				label: 'Unhandled',
-				key: '/dashboard/table',
+				key: '/dashboard/7',
 			},
 			{
 				label: 'Leads',
-				key: '/dashboard/table',
+				key: '/dashboard/8',
 			},
 			{
 				label: 'Prospect',
-				key: '/dashboard/table',
+				key: '/dashboard/9',
 			},
 			{
 				label: 'Deal',
-				key: '/dashboard/table',
+				key: '/dashboard/10',
 			},
 		],
 	},
