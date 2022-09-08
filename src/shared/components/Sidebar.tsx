@@ -93,19 +93,19 @@ const items = [
 		children: [
 			{
 				label: 'Unhandled',
-				key: '/dashboard/7',
+				key: '/dashboard/crm/unhandled',
 			},
 			{
 				label: 'Leads',
-				key: '/dashboard/8',
+				key: '/dashboard/crm/leads',
 			},
 			{
 				label: 'Prospect',
-				key: '/dashboard/9',
+				key: '/dashboard/crm/prospact',
 			},
 			{
 				label: 'Deal',
-				key: '/dashboard/10',
+				key: '/dashboard/crm/deal',
 			},
 		],
 	},
