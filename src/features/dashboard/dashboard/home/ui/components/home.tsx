@@ -14,6 +14,8 @@ import { Option } from 'antd/lib/mentions';
 import type { ColumnsType } from 'antd/es/table';
 import React from 'react';
 import CarouselComponent from './carouselBanner';
+import Header from './header';
+import Report from './report/report';
 
 interface DataType {
 	key: string;
@@ -99,166 +101,9 @@ const data: DataType[] = [
 const Home = () => {
 	return (
 		<>
-			<PageHeader
-				className="site-page-header"
-				// onBack={() => null}
-				title="Dashboard"
-				// subTitle="This is a subtitle"
-				style={{ padding: '1rem 0', fontSize: '21px' }}
-				extra={[
-					<BellOutlined style={{ fontSize: '35px' }} />,
-					<Avatar size={40} icon={<UserOutlined />} />,
-					<h5 style={{ marginBottom: '0' }}>Gabriel Raymond</h5>,
-				]}
-			/>
-			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-				<div>
-					<h3>Report</h3>
-				</div>
+			<Header />
+			<Report />
 
-				<div>
-					<Select
-						showSearch
-						placeholder="Select a person"
-						optionFilterProp="children"
-						// onChange={onChange}
-						// onSearch={onSearch}
-						filterOption={(input, option) =>
-							(option!.children as unknown as string)
-								.toLowerCase()
-								.includes(input.toLowerCase())
-						}
-					>
-						<Option value="jack">Jack</Option>
-						<Option value="lucy">Lucy</Option>
-						<Option value="tom">Tom</Option>
-					</Select>
-					<Select
-						showSearch
-						placeholder="Select a person"
-						optionFilterProp="children"
-						// onChange={onChange}
-						// onSearch={onSearch}
-						filterOption={(input, option) =>
-							(option!.children as unknown as string)
-								.toLowerCase()
-								.includes(input.toLowerCase())
-						}
-					>
-						<Option value="jack">Jack</Option>
-						<Option value="lucy">Lucy</Option>
-						<Option value="tom">Tom</Option>
-					</Select>
-					<Select
-						showSearch
-						placeholder="Select a person"
-						optionFilterProp="children"
-						// onChange={onChange}
-						// onSearch={onSearch}
-						filterOption={(input, option) =>
-							(option!.children as unknown as string)
-								.toLowerCase()
-								.includes(input.toLowerCase())
-						}
-					>
-						<Option value="jack">Jack</Option>
-						<Option value="lucy">Lucy</Option>
-						<Option value="tom">Tom</Option>
-					</Select>
-				</div>
-			</div>
-
-			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-				<Card
-					size="small"
-					title="Sales Revenue"
-					style={{ width: '25%', padding: '15px', borderRadius: '12px' }}
-					headStyle={{ borderBottom: 'none' }}
-				>
-					<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-						<h2>Rp. 3.000.000</h2>
-						<Progress type="circle" percent={75} width={40} />
-					</div>
-				</Card>
-				<Card
-					size="small"
-					title="Settlement"
-					style={{
-						width: '25%',
-						margin: '0 5px 0 10px',
-						padding: '15px',
-						borderRadius: '12px',
-					}}
-					headStyle={{ borderBottom: 'none' }}
-				>
-					<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-						<h2>Rp. 3.000.000</h2>
-						<Progress type="circle" percent={75} width={40} />
-					</div>
-				</Card>
-				<Card
-					size="small"
-					title="Interior Design"
-					style={{
-						width: '25%',
-						margin: '0 10px 0 5px',
-						padding: '15px',
-						borderRadius: '12px',
-					}}
-					headStyle={{ borderBottom: 'none' }}
-				>
-					<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-						<h2>Rp. 3.000.000</h2>
-						<Progress type="circle" percent={75} width={40} />
-					</div>
-				</Card>
-				<Card
-					size="small"
-					title="Activity"
-					style={{ width: '25%', padding: '15px', borderRadius: '12px' }}
-					headStyle={{ borderBottom: 'none' }}
-				>
-					<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-						<h2>Rp. 3.000.000</h2>
-						<Progress type="circle" percent={75} width={40} />
-					</div>
-				</Card>
-			</div>
-			<div style={{ display: 'flex' }}>
-				<Card
-					size="small"
-					title="Activity"
-					style={{
-						width: '50%',
-						padding: '15px',
-						margin: '20px 5px 20px 0px',
-						borderRadius: '12px',
-					}}
-					headStyle={{ borderBottom: 'none' }}
-				>
-					<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-						<h2>Rp. 3.000.000</h2>
-						<p>8%</p>
-					</div>
-				</Card>
-				<Card
-					size="small"
-					title="Total Follow Up"
-					style={{
-						width: '50%',
-						padding: '15px',
-						margin: '20px 0 20px 5px',
-						borderRadius: '12px',
-					}}
-					headStyle={{ borderBottom: 'none' }}
-				>
-					<Progress percent={30} />
-					<Progress percent={50} status="active" />
-					<Progress percent={70} status="exception" />
-					<Progress percent={100} />
-					<Progress percent={50} showInfo={false} />
-				</Card>
-			</div>
 			{/* <CarouselComponent /> */}
 			<div>
 				<div>
@@ -295,7 +140,6 @@ const Home = () => {
 					/>
 				</div>
 			</div>
-			
 		</>
 	);
 };
