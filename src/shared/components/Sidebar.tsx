@@ -45,7 +45,7 @@ const items = [
 		children: [
 			{
 				label: 'Need My Approval',
-				key: '/dashboard/1',
+				key: '/dashboard/table',
 			},
 			{
 				label: 'Approved',
@@ -129,18 +129,21 @@ const SidebarComponent = ({
 			collapsed={isSidebarCollapsed}
 			onCollapse={onCollapse}
 			width="250"
+			style={{ boxShadow: '0 4px 10px rgb(0 0 0 / 15%)' }}
+			theme="light"
 		>
 			{/* <div className="logo" /> */}
 			<Row justify="center" align="middle">
 				<Col>
-					<h1 style={{ color: '#fff', padding: '0.5rem 0' }}>Logo</h1>
+					<h1 style={{ color: '#000', padding: '0.5rem 0' }}>Logo</h1>
 				</Col>
 			</Row>
 			<Menu
 				defaultSelectedKeys={['/dashboard']}
 				defaultOpenKeys={['/dashboard']}
 				mode="inline"
-				theme="dark"
+				theme="light"
+				// style={{ position: 'sticky' }}
 				onClick={({ key }) => {
 					if (key === 'signout') {
 						// TODO, sign out feature here

@@ -68,9 +68,9 @@ const LayoutComponent = ({ children, isShow }: Props) => {
 			<Content
 				className="site-layout-background"
 				style={{
-					margin: '0.5rem 1rem',
-					padding: '0.5rem 1rem ',
+					padding: '1rem 2rem ',
 					minHeight: 280,
+					overflowY: 'scroll',
 				}}
 			>
 				{children}
