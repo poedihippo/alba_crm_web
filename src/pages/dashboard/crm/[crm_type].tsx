@@ -1,44 +1,13 @@
-import { useRouter } from 'next/router'
-import React from 'react'
-import Leads from './leads';
-import TitleSection from 'src/features/dashboard/crm/ui/components/titlesection'
-import SearchSection from 'src/features/dashboard/crm/ui/components/searchsection'
-import OptionSection from 'src/features/dashboard/crm/ui/components/optionssection'
-import TableSection from 'src/features/dashboard/crm/ui/components/tablesection'
+import { useRouter } from 'next/router';
+import React from 'react';
+import CrmComponent from 'src/features/dashboard/crm/ui/components/crmComponent';
 
 const Crm = () => {
-  const router = useRouter()
+	const router = useRouter();
 
-  const {crm_type}:any = router.query;
-  console.log(crm_type)
-  return crm_type === 'unhandled' ?
-    <div>
-        <TitleSection title={ crm_type} />
-        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-            <SearchSection /> 
-            <div style={{ }}>
-                <OptionSection />
-                <OptionSection />
-                <OptionSection />
-                <OptionSection />
-                <OptionSection />
-            </div>
-        </div>
-        <TableSection />
-    </div>
-  : <div>
-        <TitleSection title={crm_type} />
-        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-            <SearchSection /> 
-            <div style={{ }}>
-                <OptionSection />
-                <OptionSection />
-                <OptionSection />
-                
-            </div>
-        </div>
-        <TableSection />
-    </div>
-}
+	const { crm_type }: any = router.query;
+	console.log(crm_type);
+	return <CrmComponent crm_type={crm_type} />;
+};
 
-export default Crm
+export default Crm;
