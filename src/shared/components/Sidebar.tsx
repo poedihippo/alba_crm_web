@@ -45,19 +45,19 @@ const items = [
 		children: [
 			{
 				label: 'Need My Approval',
-				key: '/dashboard/table',
+				key: '/dashboard/approval/needmyapproval',
 			},
 			{
 				label: 'Approved',
-				key: '/dashboard/2',
+				key: '/dashboard/approval/Approved',
 			},
 			{
 				label: 'Rejection',
-				key: '/dashboard/3',
+				key: '/dashboard/approval/Rejection',
 			},
 			{
 				label: 'All',
-				key: '/dashboard/4',
+				key: '/dashboard/approval/All',
 			},
 		],
 	},

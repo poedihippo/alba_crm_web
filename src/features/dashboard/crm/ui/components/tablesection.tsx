@@ -1,5 +1,6 @@
 import { EyeOutlined, MailOutlined, PhoneOutlined, WhatsAppOutlined } from '@ant-design/icons';
 import { Space, Table, Tag } from 'antd';
+import Link from 'next/link';
 import React from 'react';
 
 const { Column, ColumnGroup } = Table;
@@ -95,7 +96,9 @@ const TableSection = () => {
 				)} />
 				<Column title="Action" dataIndex="action" key="action" render={(_) => (
 					<Space size="middle">
-						<a><EyeOutlined style={{color: 'blue'}}/></a>
+						<Link href="/dashboard/customerdetail/customerdetail">
+							<a><EyeOutlined style={{color: 'blue'}}/></a>
+						</Link>
 						<a ><WhatsAppOutlined /></a>
 						<a><MailOutlined style={{color: 'blue'}}/></a>
 						<a><PhoneOutlined style={{color: 'red'}}/></a>
