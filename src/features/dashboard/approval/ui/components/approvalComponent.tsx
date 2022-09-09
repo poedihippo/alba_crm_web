@@ -13,13 +13,13 @@ const ApprovalComponent = (props:props) => {
     <div>
         <TitleSection title="Need My Approval"/>
         <Input placeholder='Search Customer name/inv name' style={{width: '300px'}} />
-        <TableSection />    
+        <TableSection title='needmyapproval'/>    
     </div>
   ) : (
     <div>
         <TitleSection title={approval}/>
         <Input placeholder='Search Customer name/inv name' style={{width: '300px'}} />
-        <TableSection />    
+        <TableSection title=''/>    
     </div>
   )
 }

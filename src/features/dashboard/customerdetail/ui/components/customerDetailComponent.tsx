@@ -13,7 +13,7 @@ const CustomerDetailComponent = (props:props) => {
     <div>
         <TitleSection />
         <CardSection />
-        <TableSection title="Activity" active={false}/>
+        <TableSection title="Activity"/>
         <TableSection title="Deals"/>
     </div>
   ) : null;

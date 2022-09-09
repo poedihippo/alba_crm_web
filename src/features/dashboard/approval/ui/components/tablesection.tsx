@@ -5,6 +5,11 @@ import ItemSection from './itemsection';
 
 const {Column, ColumnGroup} = Table
 
+interface Data {
+    title:string;
+}
+
+
 interface DataType {
     key: React.Key;
     no: number;
@@ -36,7 +41,7 @@ const data:DataType[] = [
     },
 ]
 
-const TableSection = () => {
+const TableSection = (props:Data) => {
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -125,10 +130,23 @@ const TableSection = () => {
                 <p>Status:</p>
                 <p>WAITING_APPROVAL</p>
             </div>
-            <Row>                
-                <Button style={{color:"#fff", width: '310px'}} type='primary' >Upgrade Prospect</Button>                
-                <Button style={{background:'red', color:"#fff", width: '310px', marginLeft: '10px'}} type='default' >Drop Lead</Button>            
-            </Row>
+            {props.title === "needmyapproval" ? (
+                <div>                    
+                    <Row style={{marginTop: '10px'}}>                
+                        <Button style={{color:"#fff", width: '310px'}} type='primary' >Upgrade Prospect</Button>                
+                        <Button style={{background:'red', color:"#fff", width: '310px', marginLeft: '10px'}} type='default' >Drop Lead</Button>            
+                    </Row>
+                </div>
+            ) : (
+                <div>
+                    <Button block style={{background: 'blue', color:"#fff"}}>Add Payment</Button>
+                    <Row style={{marginTop: '10px'}}>                
+                        <Button style={{color:"#fff", width: '310px'}} type='primary' >Upgrade Prospect</Button>                
+                        <Button style={{background:'red', color:"#fff", width: '310px', marginLeft: '10px'}} type='default' >Drop Lead</Button>            
+                    </Row>
+                </div>
+            )
+            }
         </Drawer>
     </div>
   )
