@@ -2,7 +2,7 @@ import { BellOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Badge, PageHeader, Popover } from 'antd';
 import React from 'react';
 
-const Header = () => {
+const HeaderDashboard = () => {
 	return (
 		<PageHeader
 			className="site-page-header"
@@ -16,7 +16,7 @@ const Header = () => {
 					title={<span>Notification</span>}
 					content={
 						<div>
-							<ul style={{paddingLeft:'20px'}}>
+							<ul style={{ paddingLeft: '20px' }}>
 								<li>
 									8 Desember | 14:00 PM <br /> User 1 follow up customer one
 								</li>
@@ -42,4 +42,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default HeaderDashboard;

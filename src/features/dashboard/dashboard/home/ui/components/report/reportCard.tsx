@@ -1,21 +1,55 @@
 import { Card, Progress } from 'antd';
+import { useRouter } from 'next/router';
 import React from 'react';
 
-const ReportCard = () => {
+interface Props {
+	link: string;
+	title: string;
+	value: string | number;
+	target: string | number;
+	percentage: number;
+}
+
+const ReportCard = (props: Props) => {
+	const { link, title, value, target, percentage } = props;
+	const router = useRouter();
+	const handleClick = () => {
+		router.push(link);
+	};
+
+	function color(val: any) {
+		if (val < 40) return 'red';
+		else if (val >= 40) return 'yellow';
+		else if (val >= 80) return 'green';
+	}
 	return (
 		<Card
 			size="small"
-			title="Sales Revenue"
-			style={{ width: '25%', padding: '15px', borderRadius: '12px',margin:'5px' }}
+			title={title}
+			style={{
+				width: '25%',
+				padding: '15px',
+				borderRadius: '12px',
+				margin: '5px',
+				cursor: 'pointer',
+			}}
 			headStyle={{ borderBottom: 'none' }}
+			onClick={() => handleClick()}
 		>
 			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-				<h2>Rp. 3.000.000</h2>
-				<Progress type="circle" percent={75} width={40} />
+				<h2>{value}</h2>
+				{percentage !== 0 && (
+					<Progress
+						type="circle"
+						percent={percentage}
+						width={40}
+						strokeColor={color(percentage)}
+					/>
+				)}
 			</div>
-            <p>Target: Rp 30.000.000</p>
+			{target && <p>Target: {target}</p>}
 		</Card>
 	);
-}; 
+};
 
 export default ReportCard;

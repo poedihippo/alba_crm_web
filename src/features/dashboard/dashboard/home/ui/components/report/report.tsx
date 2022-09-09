@@ -9,10 +9,34 @@ const Report = () => {
 			<ReportFilter />
 
 			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-				<ReportCard />
-				<ReportCard />
-				<ReportCard />
-				<ReportCard />
+				<ReportCard
+					link="/dashboard/report/sales-revenue/bum"
+					title="Sales Revenue"
+					value={'Rp 5.000.000'}
+					target={'Rp 10.000.000'}
+					percentage={70}
+				/>
+				<ReportCard
+					link="/dashboard/report/settlement/1/02-2022"
+					title="Settlement"
+					value={'40'}
+					target={'0'}
+					percentage={30}
+				/>
+				<ReportCard
+					link="/dashboard/report/interior-design/1/2022-09"
+					title="Interior Design"
+					value={'Rp 200.000.000'}
+					target={''}
+					percentage={0}
+				/>
+				<ReportCard
+					link="/dashboard/report/activity"
+					title="Activity"
+					value={'6468'}
+					target={''}
+					percentage={0}
+				/>
 			</div>
 			<div style={{ display: 'flex' }}>
 				<Card
