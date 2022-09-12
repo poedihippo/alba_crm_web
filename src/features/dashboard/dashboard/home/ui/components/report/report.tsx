@@ -29,7 +29,7 @@ const Report = () => {
 					percentage={30}
 				/>
 				<ReportCard
-					link="/dashboard/report/interior-design/1/2022-09"
+					link="/dashboard/report/interior-design/interior-design"
 					title="Interior Design"
 					value={'Rp 200.000.000'}
 					target={''}

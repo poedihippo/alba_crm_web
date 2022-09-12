@@ -23,15 +23,7 @@ const ActivityComponent = (props: Props) => {
 	return (
 		<div>
 			<HeaderPage title={`Interior Design`} />
-			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-				<Search
-					placeholder="input search text"
-					onSearch={onSearch}
-					enterButton
-					style={{ width: '25%' }}
-				/>
-				<DatePicker onChange={onChange} picker="month" />
-			</div>
+			<DatePicker onChange={onChange} picker="month" />
 			<TableActivity />
 		</div>
 	);

@@ -7,9 +7,8 @@ import React, { useState } from 'react';
 interface DataType {
 	key: string;
 	name: string;
-	revenue: number;
-	target: number;
-	percentage: number;
+	channel: string;
+	activity: number;
 	id: number | string;
 }
 
@@ -17,9 +16,8 @@ const data: DataType[] = [
 	{
 		key: '1',
 		name: 'John Brown',
-		revenue: 20000000,
-		target: 100000000,
-		percentage: 45,
+		channel: 'Dipo',
+		activity: 244,
 		id: 3,
 	},
 ];
@@ -28,48 +26,20 @@ const TableActivity: React.FC = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const columns: ColumnsType<DataType> = [
 		{
-			title: 'Name BUM',
+			title: 'Name',
 			dataIndex: 'name',
 			key: 'name',
-			render: (text) => <a>{text}</a>,
 		},
 		{
-			title: 'Revenue',
-			dataIndex: 'revenue',
-			key: 'revenue',
+			title: 'Channel',
+			dataIndex: 'channel',
+			key: 'channel',
 		},
 		{
-			title: 'Target',
-			dataIndex: 'target',
-			key: 'target',
-		},
-		{
-			title: 'Meet Goal',
-			dataIndex: 'percentage',
-			key: 'percentage',
-		},
-		{
-			title: 'Follow Up',
-			dataIndex: 'id',
-			key: 'address',
-			render: (_, id) => (
-				<Button type="primary" onClick={showModal}>
-					Open Modal
-				</Button>
-			),
-		},
-		{
-			title: 'Action',
-			dataIndex: 'id',
-			key: 'action',
-			render: () => (
-				<Link href={'/dashboard/report/sales-revenue/store-leader'}>
-					<a>
-						<EyeOutlined /> See Detail
-					</a>
-				</Link>
-			),
-		},
+			title: 'Activity',
+			dataIndex: 'activity',
+			key: 'activity',
+		},		
 	];
 
 	const showModal = () => {
@@ -85,17 +55,7 @@ const TableActivity: React.FC = () => {
 	};
 	return (
 		<div style={{ margin: '1.5rem 0' }}>
-			<Table columns={columns} dataSource={data} />
-			<Modal
-				title="Basic Modal"
-				open={isModalOpen}
-				onOk={handleOk}
-				onCancel={handleCancel}
-			>
-				<p>Some contents...</p>
-				<p>Some contents...</p>
-				<p>Some contents...</p>
-			</Modal>
+			<Table columns={columns} dataSource={data} />	
 		</div>
 	);
 };

@@ -6,51 +6,47 @@ import React, { useState } from 'react';
 
 interface DataType {
 	key: string;
-	inv: string;
-	revenue: number;
-	customerName: string;
+	date: string;
+	channel: string;
+	sales: string;
+    revenue: number;
 	id: number | string;
 }
 
 const data: DataType[] = [
 	{
 		key: '1',
-		inv: 'INV12312312',
+		date: '02-Sep-2022',
+        channel: "Plaza indonesia",
+        sales: "Michael",
 		revenue: 20000000,
-		customerName: 'John',
 		id: 3,
 	},
 ];
 
-const TableDetail: React.FC = () => {
+const TableInteriorDesignDetail: React.FC = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const columns: ColumnsType<DataType> = [
 		{
-			title: 'Invoice',
-			dataIndex: 'inv',
-			key: 'inv',
-			// render: (text) => <a>{text}</a>,
+			title: 'Date',
+			dataIndex: 'date',
+			key: 'date',
 		},
-		{
-			title: 'Customer Name',
-			dataIndex: 'customerName',
-			key: 'customerName',
+        {
+			title: 'Channel',
+			dataIndex: 'channel',
+			key: 'channel',
+		},
+        {
+			title: 'Sales',
+			dataIndex: 'sales',
+			key: 'sales',
 		},
 		{
 			title: 'Revenue',
 			dataIndex: 'revenue',
 			key: 'revenue',
-		},		
-		{
-			title: 'Action',
-			dataIndex: 'id',
-			key: 'address',
-			render: (_) => (
-                <Space size="middle">
-                    <a  onClick={showModal} style={{color:'blue'}}><EyeOutlined /> See Detail</a>
-                </Space>
-			)
-		},
+		},			
 	];
 
 	const showModal = () => {
@@ -81,4 +77,4 @@ const TableDetail: React.FC = () => {
 	);
 };
 
-export default TableDetail;
+export default TableInteriorDesignDetail;

@@ -6,20 +6,18 @@ import React, { useState } from 'react';
 
 interface DataType {
 	key: string;
-	name: string;
-	revenue: number;
-	target: number;
-	percentage: number;
+	date: string;
+	inv: string;
+	customerName: string;	
 	id: number | string;
 }
 
 const data: DataType[] = [
 	{
 		key: '1',
-		name: 'John Brown',
-		revenue: 20000000,
-		target: 100000000,
-		percentage: 45,
+		date: '12-Sep-2022',
+		inv: "INV2131231",
+		customerName: 'Tonny William',
 		id: 3,
 	},
 ];
@@ -28,47 +26,29 @@ const TableSettlement: React.FC = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const columns: ColumnsType<DataType> = [
 		{
-			title: 'Name BUM',
-			dataIndex: 'name',
-			key: 'name',
-			render: (text) => <a>{text}</a>,
+			title: 'Date',
+			dataIndex: 'date',
+			key: 'date',
 		},
 		{
-			title: 'Revenue',
-			dataIndex: 'revenue',
-			key: 'revenue',
+			title: 'Invoice',
+			dataIndex: 'inv',
+			key: 'inv',
 		},
 		{
-			title: 'Target',
-			dataIndex: 'target',
-			key: 'target',
-		},
-		{
-			title: 'Meet Goal',
-			dataIndex: 'percentage',
-			key: 'percentage',
-		},
-		{
-			title: 'Follow Up',
-			dataIndex: 'id',
-			key: 'address',
-			render: (_, id) => (
-				<Button type="primary" onClick={showModal}>
-					Open Modal
-				</Button>
-			),
-		},
+			title: 'Customer Name',
+			dataIndex: 'customerName',
+			key: 'customerName',
+		},				
 		{
 			title: 'Action',
 			dataIndex: 'id',
-			key: 'action',
-			render: () => (
-				<Link href={'/dashboard/report/sales-revenue/store-leader'}>
-					<a>
-						<EyeOutlined /> See Detail
-					</a>
-				</Link>
-			),
+			key: 'address',
+			render: (_) => (
+                <Space size="middle">
+                    <a  onClick={showModal} style={{color:'blue'}}><EyeOutlined /> See Detail</a>
+                </Space>
+			)
 		},
 	];
 

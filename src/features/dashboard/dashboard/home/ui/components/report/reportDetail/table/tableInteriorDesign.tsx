@@ -9,7 +9,6 @@ interface DataType {
 	name: string;
 	revenue: number;
 	target: number;
-	percentage: number;
 	id: number | string;
 }
 
@@ -19,7 +18,6 @@ const data: DataType[] = [
 		name: 'John Brown',
 		revenue: 20000000,
 		target: 100000000,
-		percentage: 45,
 		id: 3,
 	},
 ];
@@ -28,42 +26,21 @@ const TableInteriorDesign: React.FC = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const columns: ColumnsType<DataType> = [
 		{
-			title: 'Name BUM',
+			title: 'ID Name',
 			dataIndex: 'name',
 			key: 'name',
-			render: (text) => <a>{text}</a>,
 		},
 		{
 			title: 'Revenue',
 			dataIndex: 'revenue',
 			key: 'revenue',
-		},
-		{
-			title: 'Target',
-			dataIndex: 'target',
-			key: 'target',
-		},
-		{
-			title: 'Meet Goal',
-			dataIndex: 'percentage',
-			key: 'percentage',
-		},
-		{
-			title: 'Follow Up',
-			dataIndex: 'id',
-			key: 'address',
-			render: (_, id) => (
-				<Button type="primary" onClick={showModal}>
-					Open Modal
-				</Button>
-			),
-		},
+		},		
 		{
 			title: 'Action',
 			dataIndex: 'id',
 			key: 'action',
 			render: () => (
-				<Link href={'/dashboard/report/sales-revenue/store-leader'}>
+				<Link href={'/dashboard/report/interior-design/interior-design-detail'}>
 					<a>
 						<EyeOutlined /> See Detail
 					</a>

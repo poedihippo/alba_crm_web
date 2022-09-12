@@ -7,6 +7,7 @@ import TableStoreLeader from './table/tableStoreLeader';
 import TableSales from './table/tableSales';
 import TableDetail from './table/tableDetail';
 import TableInteriorDesign from './table/tableInteriorDesign';
+import TableInteriorDesignDetail from './table/tableInteriorDesignDetail';
 
 const { Search } = Input;
 
@@ -26,7 +27,8 @@ const InteriorDesignComponent = (props: Props) => {
 	return (
 		<div>
 			<HeaderPage title={`Interior Design`} />
-			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+			{type === "interior-design" ? (
+				<div style={{ display: 'flex', justifyContent: 'space-between' }}>
 				<Search
 					placeholder="input search text"
 					onSearch={onSearch}
@@ -35,7 +37,19 @@ const InteriorDesignComponent = (props: Props) => {
 				/>
 				<DatePicker onChange={onChange} picker="month" />
 			</div>
-			<TableInteriorDesign />
+			) : type === "interior-design-detail" ? (
+				<h2>Interior Design Detail</h2>
+			) : (
+				""
+			)}
+			
+			{type === "interior-design" ? (
+				<TableInteriorDesign />
+			) : type === "interior-design-detail" ? (
+				<TableInteriorDesignDetail />
+			) : (
+				""
+			)}
 		</div>
 	);
 };
