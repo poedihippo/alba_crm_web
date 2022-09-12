@@ -1,9 +1,14 @@
 import { Card, Progress } from 'antd';
+import { useRouter } from 'next/router';
 import React from 'react';
 import ReportCard from './reportCard';
 import ReportFilter from './reportFilter';
 
 const Report = () => {
+	const router = useRouter();
+	const handleClick = () => {
+		router.push('/dashboard/activities/cold/1/15-2022');
+	};
 	return (
 		<div className="report">
 			<ReportFilter />
@@ -31,7 +36,7 @@ const Report = () => {
 					percentage={0}
 				/>
 				<ReportCard
-					link="/dashboard/report/activity"
+					link="/dashboard/report/activity/1/2022-09"
 					title="Activity"
 					value={'6468'}
 					target={''}
@@ -66,11 +71,37 @@ const Report = () => {
 					}}
 					headStyle={{ borderBottom: 'none' }}
 				>
-					<Progress percent={30} />
-					<Progress percent={50} status="active" />
-					<Progress percent={70} status="exception" />
-					<Progress percent={100} />
-					<Progress percent={50} showInfo={false} />
+					<div
+						style={{ display: 'flex', cursor: 'pointer', marginBottom: '10px' }}
+						onClick={() => handleClick()}
+					>
+						<span style={{ width: '60px' }}>Cold</span>
+						<Progress percent={30} strokeColor="blue" />
+					</div>
+
+					<div
+						style={{ display: 'flex', cursor: 'pointer', marginBottom: '10px' }}
+						onClick={() => handleClick()}
+					>
+						<span style={{ width: '60px' }}>Warm</span>
+						<Progress percent={50} strokeColor="yellow" />
+					</div>
+
+					<div
+						style={{ display: 'flex', cursor: 'pointer', marginBottom: '10px' }}
+						onClick={() => handleClick()}
+					>
+						<span style={{ width: '60px' }}>Hot</span>
+						<Progress percent={70} strokeColor="red" />
+					</div>
+
+					<div
+						style={{ display: 'flex', cursor: 'pointer', marginBottom: '10px' }}
+						onClick={() => handleClick()}
+					>
+						<span style={{ width: '60px' }}>Closed</span>
+						<Progress percent={90} strokeColor="#0e0e0e" />
+					</div>
 				</Card>
 			</div>
 		</div>

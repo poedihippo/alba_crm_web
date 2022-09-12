@@ -83,7 +83,7 @@ const items = [
 	},
 	{
 		label: 'Promo',
-		key: 'promo',
+		key: '/dashboard/promo',
 		icon: <PercentageOutlined />,
 	},
 	{
