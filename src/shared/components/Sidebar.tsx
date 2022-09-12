@@ -68,11 +68,11 @@ const items = [
 		children: [
 			{
 				label: 'Leads',
-				key: '/dashboard/5',
+				key: '/dashboard/report/leads',
 			},
 			{
 				label: 'Brands',
-				key: '/dashboard/6',
+				key: '/dashboard/report/brands',
 			},
 		],
 	},
@@ -83,7 +83,7 @@ const items = [
 	},
 	{
 		label: 'Promo',
-		key: '/dashboard/promo',
+		key: '/dashboard/promo-categories',
 		icon: <PercentageOutlined />,
 	},
 	{

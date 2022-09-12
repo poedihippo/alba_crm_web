@@ -12,7 +12,7 @@ import {
 } from 'antd';
 import { Option } from 'antd/lib/mentions';
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import CarouselComponent from './carouselBanner';
 import HeaderDashboard from './header';
 import Header from './header';
@@ -21,12 +21,12 @@ import TopPerformance from './topPerformance/topPerformance';
 
 const Home = () => {
 	return (
-		<>
+		<Fragment>
 			<HeaderDashboard />
 			<Report />
 			<TopPerformance />
 			{/* <CarouselComponent /> */}
-		</>
+		</Fragment>
 	);
 };
 
