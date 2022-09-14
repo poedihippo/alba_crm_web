@@ -1,4 +1,5 @@
 import React from 'react'
+import AllBrand from './allBrand'
 import Banner from './banner'
 import NewArrival from './newArrival'
 import Search from './search'
@@ -15,6 +16,7 @@ const ProdukComponent = (props:props) => {
         <Banner />
         <Search />
         <NewArrival />
+        <AllBrand />
     </div>
   ) : null
 }
