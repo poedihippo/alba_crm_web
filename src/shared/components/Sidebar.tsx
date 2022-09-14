@@ -78,7 +78,7 @@ const items = [
 	},
 	{
 		label: 'Produk',
-		key: 'Produk',
+		key: '/dashboard/produk/produk',
 		icon: <AppstoreOutlined />,
 	},
 	{
